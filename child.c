@@ -41,23 +41,23 @@ int main(void) {
 
     // Read message data.
     sz = ReadFull(in, buf, len);
-    if (sz != (ssize_t) len) {
+    if (sz != (ssize_t)len) {
       fprintf(stderr, "child : Failed to read message.\n");
       return 1;
     }
 
-    fprintf(stderr, "child : Read message     : %.*s\n", (int) len, buf);
+    fprintf(stderr, "child : Read message     : %.*s\n", (int)len, buf);
 
     // Reverse and send response.
     Reverse(buf, len);
-    fprintf(stderr, "child : Sending response : %.*s\n", (int) len, buf);
+    fprintf(stderr, "child : Sending response : %.*s\n", (int)len, buf);
 
     sz = WriteFull(out, buf, len);
-    if (sz != (ssize_t) len) {
+    if (sz != (ssize_t)len) {
       fprintf(stderr, "child : Failed to write message.\n");
       return 1;
     }
-  } while(1);
+  } while (1);
 
   fprintf(stderr, "child : Exiting\n");
   return 0;

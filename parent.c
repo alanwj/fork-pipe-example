@@ -74,16 +74,17 @@ int main(void) {
       size_t len = strlen(messages[i]);
 
       // Write the length.
-      fprintf(stderr, "parent: Writing length   : %d\n", (int) len);
+      fprintf(stderr, "parent: Writing length   : %d\n", (int)len);
       WriteFull(in[1], &len, sizeof(len));
 
       // Write the data.
-      fprintf(stderr, "parent: Writing data     : %.*s\n", (int) len, messages[i]);
+      fprintf(stderr, "parent: Writing data     : %.*s\n", (int)len,
+              messages[i]);
       WriteFull(in[1], messages[i], len);
 
       // Read the response.
       ReadFull(out[0], buf, len);
-      fprintf(stderr, "parent: Read response    : %.*s\n", (int) len, buf);
+      fprintf(stderr, "parent: Read response    : %.*s\n", (int)len, buf);
     }
 
     // Tell child to quite.

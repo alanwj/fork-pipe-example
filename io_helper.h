@@ -1,5 +1,5 @@
-#ifndef   IO_HELPER_
-#define   IO_HELPER_
+#ifndef IO_HELPER_
+#define IO_HELPER_
 
 #include <unistd.h>
 
@@ -13,4 +13,4 @@ ssize_t ReadFull(int fd, void* buf, size_t count);
 // Returns -1 if on error.
 ssize_t WriteFull(int fd, const void* buf, size_t count);
 
-#endif    // IO_HELPER_
+#endif  // IO_HELPER_
