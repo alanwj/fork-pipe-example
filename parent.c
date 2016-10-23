@@ -115,7 +115,7 @@ int main(void) {
     fprintf(stderr, "parent: Read response    : %.*s\n", (int)len, buf);
   }
 
-  // Tell child to quite.
+  // Tell child to quit.
   size_t len = 0;
   WriteFull(to_child_fd, &len, sizeof(len));
 
