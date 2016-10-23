@@ -4,7 +4,7 @@ all: parent child
 
 parent: parent.o io_helper.o
 
-child: child.o io.helper.o
+child: child.o io_helper.o
 
 parent.o: parent.c io_helper.h
 
