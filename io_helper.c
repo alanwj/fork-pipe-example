@@ -11,7 +11,7 @@ ssize_t ReadFull(int fd, void* buf, size_t count) {
       return -1;
     }
 
-    buf += sz;
+    buf = ((char *)buf) + sz;
     bytes_left -= sz;
   }
   return count;
@@ -25,7 +25,7 @@ ssize_t WriteFull(int fd, const void* buf, size_t count) {
       return -1;
     }
 
-    buf += sz;
+    buf = ((char *)buf) + sz;
     bytes_left -= sz;
   }
   return count;
